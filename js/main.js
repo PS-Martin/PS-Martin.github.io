@@ -2,7 +2,7 @@
 var dobleSalt=0;
 var dobleSaltON=0;
 
-
+//
 //We initialize a game state
 PlayState = {};
 
