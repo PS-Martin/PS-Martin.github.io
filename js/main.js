@@ -280,9 +280,7 @@ PlayState._handleInput = function () {
         this.hero.move(0);
     };
 
-    if(this.game.input.activePointer.isDown﻿){
-    	this.hero.jump();
-    }
+   
 
     this.keys.up.onDown.add(function () {
     this.hero.jump();
