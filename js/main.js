@@ -288,14 +288,7 @@ PlayState._handleInput = function () {
     this.hero.jump();
 }, this);
 
-    gyro.frequency = 10;
-		// start gyroscope detection
-          gyro.startTracking(function(o) {
-               // updating player velocity
-               hero.body.velocity.x += o.gamma/20;
-               //player.body.velocity.y += o.beta/20;
-          });
-
+  
 
 
 
