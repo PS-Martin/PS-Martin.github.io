@@ -12,6 +12,15 @@ window.onload = function () {
     let game = new Phaser.Game(960, 600, Phaser.AUTO, 'game');
     game.state.add('play', PlayState);
     game.state.start('play');
+	
+	// setting gyroscope update frequency
+          gyro.frequency = 10;
+		// start gyroscope detection
+          gyro.startTracking(function(o) {
+               // updating player velocity
+               hero.body.velocity.x += o.gamma/20;
+               //player.body.velocity.y += o.beta/20;
+          });
     		
 };
 
