@@ -2,16 +2,12 @@
 var dobleSalt=0;
 var dobleSaltON=0;
 var gyro=0;
-window.addEventListener("deviceorientation", function(event) {
-    let x = event.gamma;
-     	gyro = (x/Math.abs(x))
-    	
-}, true);
+
 //We initialize a game state
 PlayState = {};
 window.addEventListener("deviceorientation", function(event) {
     let x = event.gamma;
-     	gyro = (x/(-x))
+     	gyro = (x/Math.abs(x))
     	
 }, true);
 //Here we initilalize Phaser with an specific aspect ratio, when loading the window.
