@@ -21,11 +21,7 @@ window.onload = function () {
 		
 };
 
-window.addEventListener("deviceorientation", function(event) {
-    let x = event.gamma;
-     	gyro = (x/Math.abs(x))
-    	
-}, true);
+
 
 PlayState.init = function () {
     this.game.renderer.renderSession.roundPixels = true; //as we don't want any blurr with pixel art
@@ -133,6 +129,11 @@ PlayState._loadLevel = function (data) {
 	const GRAVITY = 1200;
     this.game.physics.arcade.gravity.y = GRAVITY;
 
+	window.addEventListener("deviceorientation", function(event) {
+    let x = event.gamma;
+     	gyro = (x/Math.abs(x))
+    	
+}, true);
     
 };
 
