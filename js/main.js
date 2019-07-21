@@ -5,11 +5,7 @@ var gyro=0;
 
 //We initialize a game state
 PlayState = {};
-window.addEventListener("deviceorientation", function(event) {
-    let x = event.gamma;
-     	gyro = (x/Math.abs(x))
-    	
-}, true);
+
 //Here we initilalize Phaser with an specific aspect ratio, when loading the window.
 //we also load the game state initialized before 
 window.onload = function () {
