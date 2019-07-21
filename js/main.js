@@ -5,9 +5,9 @@ var gyro=0;
 
 window.addEventListener("deviceorientation", function(event) {
     let x = event.gamma;
-     	let y=(x^2);
-   	gyro = ((x/Math.abs(x)*(y));
-    	//gyro = x;
+     	//let y=(x^2);
+   	//gyro = ((x/Math.abs(x)*(y));
+    	gyro = x;
 }, true);
 
 //We initialize a game state
