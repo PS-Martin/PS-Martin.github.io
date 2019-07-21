@@ -128,7 +128,7 @@ PlayState._loadLevel = function (data) {
 	window.addEventListener("deviceorientation", function(event) {
     let x = event.gamma;
      	
-		gyro = (x*0.5);
+		gyro = (x*0.8);
     	
 }, true);
     
