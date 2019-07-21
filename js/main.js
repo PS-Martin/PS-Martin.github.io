@@ -42,6 +42,7 @@ PlayState.init = function () {
 PlayState.update = function () {
 	this._handleCollisions();
     this._handleInput();
+    this._handleOrientation();
     this.coinFont.text = `x${this.coinPickupCount}`;
     this.keyIcon.frame = this.hasKey ? 1 : 0;
 };
