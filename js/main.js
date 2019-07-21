@@ -4,7 +4,7 @@ var dobleSaltON=0;
 var gyro=0;
 window.addEventListener("deviceorientation", function(event) {
     let x = event.gamma;
-     	gyro = (x/(-x))
+     	gyro = (x/Math.abs(x))
     	
 }, true);
 //We initialize a game state
