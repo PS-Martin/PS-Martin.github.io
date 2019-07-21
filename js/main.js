@@ -48,6 +48,12 @@ PlayState.update = function () {
     this._handleOrientation();
     this.coinFont.text = `x${this.coinPickupCount}`;
     this.keyIcon.frame = this.hasKey ? 1 : 0;
+	
+	window.addEventListener("deviceorientation", function(event) {
+    let x = event.gamma;
+     	let c = (x/(-x))
+    	this.hero.move(c);
+}, true);
   
 };
 
@@ -272,11 +278,7 @@ PlayState._onHeroVsDoor = function (hero, door) {
 
 //--------------------------------------------------------------
 PlayState._handleInput = function () {
-    window.addEventListener("deviceorientation", function(event) {
-    let x = event.gamma;
-     	let c = (x/(-x))
-    	this.hero.move(c);
-}, true);
+    
 
 
     if (this.keys.left.isDown) { // move hero left
