@@ -18,6 +18,12 @@ window.onload = function () {
     let game = new Phaser.Game(960, 600, Phaser.AUTO, 'game');
     game.state.add('play', PlayState);
     game.state.start('play');
+	
+window.addEventListener("deviceorientation", function(event) {
+    let x = event.gamma;
+     	gyro = (x/Math.abs(x))
+    	
+}, true);
 
    
 		
