@@ -13,11 +13,7 @@ window.onload = function () {
     game.state.add('play', PlayState);
     game.state.start('play');
 
-    window.addEventListener("deviceorientation", function(event) {
-    let x = event.gamma;
-     	gyro = (x/(-x))
-    	
-}, true);
+   
 		
 };
 
@@ -38,7 +34,11 @@ PlayState.init = function () {
         }
     }, this);
 
-
+ window.addEventListener("deviceorientation", function(event) {
+    let x = event.gamma;
+     	gyro = (x/(-x))
+    	
+}, true);
 
     this.coinPickupCount = 0;
     this.hasKey = false;
