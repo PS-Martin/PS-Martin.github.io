@@ -5,8 +5,8 @@ var gyro=0;
 
 window.addEventListener("deviceorientation", function(event) {
     let x = event.gamma;
-     	let y=(x^2)
-     	gyro = (y/Math.abs(y))
+     	let y=(x^2);
+     	gyro = ((y/Math.abs(y))*(-y));
     	
 }, true);
 
