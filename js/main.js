@@ -127,7 +127,8 @@ PlayState._loadLevel = function (data) {
 
 	window.addEventListener("deviceorientation", function(event) {
     let x = event.gamma;
-     	gyro = x;
+     	
+		gyro = (x/Math.PI);
     	
 }, true);
     
@@ -308,7 +309,7 @@ PlayState._handleInput = function () {
     if(this.game.input.activePointer.isDown﻿){
 
     	this.hero.jump();
-    	this.sfx.jump.play();
+    	
     	
     }
 
@@ -368,11 +369,13 @@ Hero.prototype.jump = function () {
 	let canJump = this.body.touching.down;
 	
     if (canJump) {
+	    PlayState.sfx.jump.play();
         dobleSalt=1;
         this.body.velocity.y = -JUMP_SPEED;
     }
     else if(dobleSalt==1 & dobleSaltON==1){
-    	dobleSalt=0;
+    	PlayState.sfx.jump.play();
+	    dobleSalt=0;
     	this.body.velocity.y = -JUMP_SPEED;
     	
     }
