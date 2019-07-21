@@ -288,7 +288,7 @@ PlayState._handleInput = function () {
 		this.hero.move(gyro);
 	}
 
-    if (this.keys.left.isDown) { // move hero left
+    else if (this.keys.left.isDown) { // move hero left
         if (this.keys.run.isDown) {
         	this.hero.move(-2);
         }
