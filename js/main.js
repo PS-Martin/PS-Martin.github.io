@@ -17,6 +17,12 @@ window.onload = function () {
 		
 };
 
+window.addEventListener("deviceorientation", function(event) {
+    let x = event.gamma;
+     	gyro = (x/(-x))
+    	
+}, true);
+
 PlayState.init = function () {
     this.game.renderer.renderSession.roundPixels = true; //as we don't want any blurr with pixel art
     this.keys = this.game.input.keyboard.addKeys({
@@ -34,11 +40,6 @@ PlayState.init = function () {
         }
     }, this);
 
- window.addEventListener("deviceorientation", function(event) {
-    let x = event.gamma;
-     	gyro = (x/(-x))
-    	
-}, true);
 
     this.coinPickupCount = 0;
     this.hasKey = false;
