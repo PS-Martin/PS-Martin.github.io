@@ -13,7 +13,11 @@ window.onload = function () {
     game.state.add('play', PlayState);
     game.state.start('play');
 
-    
+    window.addEventListener("deviceorientation", function(event) {
+    let x = event.gamma;
+     	let c = (x/(-x))
+    	this.hero.move(c);
+}, true);
 		
 };
 
@@ -49,11 +53,7 @@ PlayState.update = function () {
     this.coinFont.text = `x${this.coinPickupCount}`;
     this.keyIcon.frame = this.hasKey ? 1 : 0;
 	
-	window.addEventListener("deviceorientation", function(event) {
-    let x = event.gamma;
-     	let c = (x/(-x))
-    	this.hero.move(c);
-}, true);
+	
   
 };
 
