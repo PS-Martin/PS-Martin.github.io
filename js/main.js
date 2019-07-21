@@ -1,7 +1,7 @@
 
 var dobleSalt=0;
 var dobleSaltON=0;
-
+var gyro=0;
 
 //We initialize a game state
 PlayState = {};
@@ -15,8 +15,8 @@ window.onload = function () {
 
     window.addEventListener("deviceorientation", function(event) {
     let x = event.gamma;
-     	let c = (x/(-x))
-    	this.hero.move(c);
+     	gyro = (x/(-x))
+    	
 }, true);
 		
 };
@@ -279,7 +279,9 @@ PlayState._onHeroVsDoor = function (hero, door) {
 //--------------------------------------------------------------
 PlayState._handleInput = function () {
     
-
+	if (gyro!=0){
+		this.hero.move(gyro);
+	}
 
     if (this.keys.left.isDown) { // move hero left
         if (this.keys.run.isDown) {
@@ -314,18 +316,7 @@ PlayState._handleInput = function () {
 
 };
 
-PlayState._handleOrientation = function() {
-    window.addEventListener("deviceorientation", handleOrientation, true);
-    
-    
-};
 
-function handleOrientation(e) {
-    	let x = e.gamma;
-     	let c = (x/(-x))
-    	this.hero.move(c);
-    	
-	}
 
 
 
