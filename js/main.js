@@ -127,7 +127,8 @@ PlayState.create = function () {
     this._loadLevel(this.game.cache.getJSON(`level:${this.level}`));
     
     this._createHud();
-     this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;﻿
+    // this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+this.game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;	
      this.game.camera.follow(this.hero, Phaser.Camera.FOLLOW_PLATFORMER);
      //this.game.camera.follow(this.hero);
      //this.hero.fixedToCamera= true;
